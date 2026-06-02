@@ -3,154 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBF Flyer Header</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* Light background to see the header clearly */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .header-container {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            height: 400px; /* Adjust height as needed */
-            background: radial-gradient(circle, #2563EB, #1D4ED8);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .content-wrap {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-row {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Large letters */
-        .large-text {
-            font-size: 140px;
-            font-weight: 800;
-            line-height: 1;
-            margin: 0;
-            text-transform: uppercase;
-        }
-
-        /* Small text below logo */
-        .sub-text-block {
-            line-height: 1.2;
-        }
-
-        .stitches-by-favour {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0;
-            text-transform: uppercase;
-        }
-
-        .beauty-in-decency {
-            font-size: 20px;
-            margin: 0;
-            color: #ddd; /* Slightly lighter white for contrast */
-        }
-
-        /* Vector icons styling */
-        .logo-icon {
-            height: 120px; /* Base size */
-            width: auto;
-        }
-
-        /* SVG icons */
-        .stitching-icon, .sewing-machine-icon {
-            fill: white;
-        }
-
-        /* Measuring tape image */
-        .measuring-tape {
-            position: absolute;
-            left: 20px;
-            top: -20px;
-            height: 130%;
-            transform: rotate(-10deg);
-            opacity: 0.9;
-            pointer-events: none; /* Won't interfere with clicks */
-        }
-
-        /* Sparkle icons */
-        .sparkle-group {
-            position: absolute;
-            right: 50px;
-            top: 50px;
-            fill: white;
-        }
-
-        .sparkle-1 { height: 40px; }
-        .sparkle-2 { height: 25px; transform: translate(30px, 40px); }
-        .sparkle-3 { height: 35px; transform: translate(60px, -10px); }
-
-        /* Media queries for responsiveness */
-        @media (max-width: 768px) {
-            .header-container { height: 300px; }
-            .large-text { font-size: 80px; }
-            .logo-icon { height: 80px; }
-            .logo-row { gap: 10px; }
-            .stitches-by-favour { font-size: 18px; }
-            .beauty-in-decency { font-size: 16px; }
-            .measuring-tape { height: 110%; left: -10px; }
-            .sparkle-group { right: 30px; top: 30px; transform: scale(0.7); }
-        }
-    </style>
+    <title>SBF - Sassy-By-Fave | Exclusive Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="header-container">
-        <img src="measuring_tape.png" alt="Yellow measuring tape" class="measuring-tape">
-
-        <svg class="sparkle-group" viewBox="0 0 100 100">
-            <path class="sparkle-1" d="M50,0 C65,30 100,50 65,70 C50,100 35,70 0,50 C35,30 50,0 Z"/>
-            <path class="sparkle-2" d="M50,0 C65,30 100,50 65,70 C50,100 35,70 0,50 C35,30 50,0 Z"/>
-            <path class="sparkle-3" d="M50,0 C65,30 100,50 65,70 C50,100 35,70 0,50 C35,30 50,0 Z"/>
-        </svg>
-
-        <div class="content-wrap">
-            <div class="logo-row">
-                <svg class="logo-icon stitching-icon" viewBox="0 0 100 100">
-                    <path d="M10,90 C30,70 40,80 50,50 C60,20 70,30 90,10" stroke-width="8" stroke-linecap="round" fill="none"/>
-                    <line x1="30" y1="10" x2="30" y2="90" stroke-width="8" stroke-linecap="round"/>
-                </svg>
-
-                <h1 class="large-text">SBF</h1>
-
-                <svg class="logo-icon sewing-machine-icon" viewBox="0 0 100 100">
-                    <rect x="10" y="70" width="80" height="20" rx="5" />
-                    <rect x="40" y="20" width="20" height="50" rx="5"/>
-                    <rect x="20" y="30" width="60" height="15" rx="5"/>
-                    <circle cx="80" cy="50" r="10" />
-                </svg>
-            </div>
-
-            <div class="sub-text-block">
-                <p class="stitches-by-favour">[STITCHES BY FAVOUR]</p>
-                <p class="beauty-in-decency">...beauty in decency</p>
-            </div>
+    <!-- Header and Main Banner -->
+    <header class="hero-banner">
+        <div class="logo-container">
+            <img src="https://i.ibb.co/3pQG6M2/sbf-logo.png" alt="Sassy-By-Fave Logo" class="main-logo"> <!-- Placeholder URL -->
+            <h1>SASSY-BY-FAVE</h1>
         </div>
-    </div>
+        <div class="banner-carousel">
+            <!-- This area simulates the complex photo grid/carousel -->
+            <img src="https://i.ibb.co/L5M2K9D/banner-fashions.jpg" alt="Exclusive Fashions Banner"> <!-- Placeholder URL -->
+        </div>
+    </header>
 
-</body>
-</html>
+    <!-- Main Content Section -->
+    <main class="site-content">
+        
+        <section class="exclusive-message">
+            <h2>EXCLUSIVE COLLECTION</h2>
+            <h3>Premium Tailoring Materials and Wears</h3>
+            <p>Curated for the discerning eye. Your journey to impeccable style begins here. We provide exquisite corporate dresses, elegant jumpsuits, stunning traditional wears, glamorous dinner gowns, and comfortable casual wear, along with a wide range of premium tailoring materials.</p>
+            <button class="exclusive-btn">Shop Collection</button>
+        </section>
+
+        <!-- Product Gallery/Showcase Section -->
+        <section class="collection-showcase">
+            <h2>OUR ETHOS</h2>
+            <div class="ethos-box">
+                <p>"Seeth thou a man diligent in his business? He shall stand before kings; he shall not stand before mean men." (Proverbs 22:29)</p>
+            </div>
+
+            <div class="product-gallery">
+                <!-- Example of a single product card with the referenced file name -->
+                <div class="product-card">
+                    <img src="1000094677.jpg" alt="Featured Black & White Jumpsuit">
+                    <p class="product-reference">1000094677.jpg</p>
+                </div>
+                <!-- Other product cards -->
+                <div class="product-card">
+                    <img src="https://i.ibb.co/yq6QfH2/product2.jpg" alt="Patterned Separates"> <!-- Placeholder -->
+                    <p class="product-title">Favour SBF</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.ibb.co/bX163b4/product3.jpg" alt="Orange Co-ords"> <!-- Placeholder -->
+                    <p class="product-title">Product Details</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.ibb.co/gJB5X0B/product4.jpg" alt="Patterned Off-Shoulder"> <!-- Placeholder -->
+                    <p class="product-title">Favour sbf</p>
+                </div>
+            </div>
+            <!-- Pagination-like indicators -->
+            <div class="gallery-nav">
+                <span class="active"></span>
+                <span></span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="main-footer">
+        <div class="footer-bottom-row">
+            <div class="social-links">
+                <a href="https://www.facebook.com/FavourSBF" target="_blank" class="social-icon fb-icon" title="Facebook - Favour SBF">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.tiktok.com/@Favour_sbf" target="_blank" class="social-icon tiktok-icon" title="TikTok - Favour sbf">
+                    <i class="fab fa-tiktok">
+                        
