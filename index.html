@@ -4,77 +4,388 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SBF - Sassy-By-Fave | Exclusive Collection</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for Social Media Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- FontAwesome for Premium Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts for Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & GLOBAL LUXURY STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            background-image: linear-gradient(135deg, #0b0b0b 0%, #1a1a1a 100%);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- GOLD GRADIENT TRIMS --- */
+        .gold-text {
+            color: #dfba6b;
+            background: linear-gradient(135deg, #fbf5b7 0%, #dfba6b 50%, #b28d46 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- HEADER & HERO SECTION --- */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid rgba(223, 186, 107, 0.2);
+        }
+
+        .logo-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            margin-top: 10px;
+        }
+
+        /* Combined Banner Background Concept */
+        .hero-banner-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            border: 2px solid #dfba6b;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(223, 186, 107, 0.15);
+        }
+
+        .hero-banner-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- EXCLUSIVE INTRODUCTION --- */
+        .exclusive-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .exclusive-section h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        .exclusive-section h3 {
+            font-weight: 300;
+            color: #cccccc;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .exclusive-section p {
+            color: #999999;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        /* Gold Luxury Buttons */
+        .premium-btn {
+            background: transparent;
+            color: #dfba6b;
+            border: 1px solid #dfba6b;
+            padding: 12px 35px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+        }
+
+        .premium-btn:hover {
+            background: linear-gradient(135deg, #fbf5b7 0%, #dfba6b 50%, #b28d46 100%);
+            color: #000000;
+            box-shadow: 0 0 15px rgba(223, 186, 107, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* --- OUR ETHOS SECTION --- */
+        .ethos-section {
+            background: rgba(15, 15, 15, 0.9);
+            border: 1px solid rgba(223, 186, 107, 0.15);
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .ethos-section h2 {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .ethos-box {
+            border: 1px dashed rgba(223, 186, 107, 0.4);
+            padding: 25px;
+            font-style: italic;
+            color: #dddddd;
+            font-size: 1.1rem;
+        }
+
+        /* --- PRODUCT GALLERY --- */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background: #121212;
+            border: 1px solid rgba(223, 186, 107, 0.2);
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #dfba6b;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            background: #222; /* Fallback visually pleasing block */
+        }
+
+        .product-card p {
+            font-size: 0.85rem;
+            color: #aeaeae;
+            letter-spacing: 1px;
+        }
+
+        /* --- FOOTER & CONTACT INFO --- */
+        footer {
+            background: #050505;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(223, 186, 107, 0.2);
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .address-box {
+            font-size: 0.9rem;
+            color: #cccccc;
+            max-width: 400px;
+        }
+
+        .address-box i {
+            color: #dfba6b;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .footer-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-box {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(223, 186, 107, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-box:hover {
+            background: #dfba6b;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        /* --- FLOATING WHATSAPP ELEMENT --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+            color: white;
+        }
+
+        /* Responsive Layout fixes */
+        @media (min-width: 768px) {
+            .footer-grid {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header and Main Banner -->
-    <header class="hero-banner">
-        <div class="logo-container">
-            <img src="https://i.ibb.co/3pQG6M2/sbf-logo.png" alt="Sassy-By-Fave Logo" class="main-logo"> <!-- Placeholder URL -->
-            <h1>SASSY-BY-FAVE</h1>
-        </div>
-        <div class="banner-carousel">
-            <!-- This area simulates the complex photo grid/carousel -->
-            <img src="https://i.ibb.co/L5M2K9D/banner-fashions.jpg" alt="Exclusive Fashions Banner"> <!-- Placeholder URL -->
+    <!-- Header Section -->
+    <header>
+        <h1 class="logo-title gold-text">SASSY-BY-FAVE</h1>
+        
+        <!-- Main Collage/Flyer Graphic Asset Integration -->
+        <div class="hero-banner-container">
+            <!-- Ensure watermarked_img_8438448594174531705.png is in your GitHub folder -->
+            <img src="watermarked_img_8438448594174531705.png" alt="Sassy-By-Fave Luxury Banner Banner">
         </div>
     </header>
 
-    <!-- Main Content Section -->
-    <main class="site-content">
+    <!-- Main Dynamic Content Wrap -->
+    <main>
         
-        <section class="exclusive-message">
-            <h2>EXCLUSIVE COLLECTION</h2>
+        <!-- Exclusive Brand Intro Block -->
+        <section class="exclusive-section">
+            <h2 class="gold-text">EXCLUSIVE COLLECTION</h2>
             <h3>Premium Tailoring Materials and Wears</h3>
-            <p>Curated for the discerning eye. Your journey to impeccable style begins here. We provide exquisite corporate dresses, elegant jumpsuits, stunning traditional wears, glamorous dinner gowns, and comfortable casual wear, along with a wide range of premium tailoring materials.</p>
-            <button class="exclusive-btn">Shop Collection</button>
+            <p>Curated for the discerning eye. Your journey to impeccable style begins here. Specializing in all kinds of high-profile bespoke styling ranging from Corporate dresses, jumpsuits, traditional wears, dinner gowns, casual wears, and beautiful premium raw fabrics.</p>
+            <button class="premium-btn">Shop Collection</button>
         </section>
 
-        <!-- Product Gallery/Showcase Section -->
-        <section class="collection-showcase">
-            <h2>OUR ETHOS</h2>
+        <!-- Our Ethos Quote Frame -->
+        <section class="ethos-section">
+            <h2 class="gold-text">Our Ethos</h2>
             <div class="ethos-box">
-                <p>"Seeth thou a man diligent in his business? He shall stand before kings; he shall not stand before mean men." (Proverbs 22:29)</p>
+                "Seeth thou a man diligent in his business? He shall stand before kings; he shall not stand before mean men." <br><strong>(Proverbs 22:29)</strong>
             </div>
+        </section>
 
-            <div class="product-gallery">
-                <!-- Example of a single product card with the referenced file name -->
+        <!-- Showcase Catalog Grid Layout -->
+        <section class="gallery-container">
+            <div class="gallery-grid">
+                
+                <!-- Product Card #1 referencing assigned filename verbatim -->
                 <div class="product-card">
-                    <img src="1000094677.jpg" alt="Featured Black & White Jumpsuit">
-                    <p class="product-reference">1000094677.jpg</p>
+                    <img src="1000094677.jpg" alt="Featured Suit Wear Design Design Asset">
+                    <p><strong>1000094677.jpg</strong></p>
                 </div>
-                <!-- Other product cards -->
+
+                <!-- Product Card #2 -->
                 <div class="product-card">
-                    <img src="https://i.ibb.co/yq6QfH2/product2.jpg" alt="Patterned Separates"> <!-- Placeholder -->
-                    <p class="product-title">Favour SBF</p>
+                    <img src="1000094677.jpg" alt="Exquisite Floral Design Wear Style">
+                    <p><strong>Favour SBF</strong></p>
                 </div>
+
+                <!-- Product Card #3 -->
                 <div class="product-card">
-                    <img src="https://i.ibb.co/bX163b4/product3.jpg" alt="Orange Co-ords"> <!-- Placeholder -->
-                    <p class="product-title">Product Details</p>
+                    <img src="1000094677.jpg" alt="Elegant Outer Wear Design Specs">
+                    <p><strong>Product Details</strong></p>
                 </div>
+
+                <!-- Product Card #4 -->
                 <div class="product-card">
-                    <img src="https://i.ibb.co/gJB5X0B/product4.jpg" alt="Patterned Off-Shoulder"> <!-- Placeholder -->
-                    <p class="product-title">Favour sbf</p>
+                    <img src="1000094677.jpg" alt="Classic Luxury Print Two-Piece">
+                    <p><strong>Favour sbf</strong></p>
                 </div>
-            </div>
-            <!-- Pagination-like indicators -->
-            <div class="gallery-nav">
-                <span class="active"></span>
-                <span></span>
+
             </div>
         </section>
 
     </main>
 
-    <!-- Footer Area -->
-    <footer class="main-footer">
-        <div class="footer-bottom-row">
-            <div class="social-links">
-                <a href="https://www.facebook.com/FavourSBF" target="_blank" class="social-icon fb-icon" title="Facebook - Favour SBF">
+    <!-- Page Structural Footer -->
+    <footer>
+        <div class="footer-grid">
+            
+            <!-- Address and Geolocation details -->
+            <div class="address-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Shop 7 Rehoboth Plaza, Opposite Ibro Filling Station, Ojede Junction, Ankpa, Kogi State.</p>
+            </div>
+
+            <!-- Fast Action Interaction Triggers -->
+            <div class="footer-actions">
+                <button class="premium-btn" onclick="window.location.href='tel:07026157845'">Call Us</button>
+                <button class="premium-btn" onclick="window.location.href='tel:09050939106'">Inquire</button>
+            </div>
+
+            <!-- Standardized Handles Integration UI Blocks -->
+            <div class="social-container">
+                <!-- Facebook Asset Handle Redirect -->
+                <a href="https://facebook.com" target="_blank" class="social-box" title="Follow us on Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://www.tiktok.com/@Favour_sbf" target="_blank" class="social-icon tiktok-icon" title="TikTok - Favour sbf">
-                    <i class="fab fa-tiktok">
-                        
+                <!-- TikTok Asset Handle Redirect -->
+                <a href="https://tiktok.com" target="_blank" class="social-box" title="Follow us on TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Floating Global Interactive WhatsApp Element -->
+    <a href="https://wa.me/2347026157845" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
