@@ -53,7 +53,6 @@
             margin-top: 10px;
         }
 
-        /* Combined Banner Background Concept */
         .hero-banner-container {
             width: 100%;
             max-width: 1200px;
@@ -98,7 +97,6 @@
             margin-bottom: 30px;
         }
 
-        /* Gold Luxury Buttons */
         .premium-btn {
             background: transparent;
             color: #dfba6b;
@@ -146,18 +144,45 @@
             font-size: 1.1rem;
         }
 
-        /* --- PRODUCT GALLERY --- */
+        /* --- AUTOMATED SLIDESHOW CAROUSEL --- */
         .gallery-container {
             max-width: 1200px;
             margin: 60px auto;
             padding: 0 20px;
+            overflow: hidden; /* Hides cards outside the viewport window */
+            position: relative;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* Subtle gold fade effects on the left and right sides of the carousel window */
+        .gallery-container::before, .gallery-container::after {
+            content: "";
+            height: 100%;
+            width: 50px;
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .gallery-container::before {
+            left: 0;
+            background: linear-gradient(to right, #0b0b0b, transparent);
+        }
+        .gallery-container::after {
+            right: 0;
+            background: linear-gradient(to left, #0b0b0b, transparent);
+        }
+
+        /* Moving track holding the cards */
+        .slider-track {
+            display: flex;
             gap: 25px;
-            margin-top: 30px;
+            width: calc(300px * 8 + 200px); /* Accommodates unique cards + duplicates for infinite loop seamlessness */
+            animation: slideShow 25s linear infinite;
+        }
+
+        /* Pauses the slideshow when user mouse hovers or holds touch */
+        .slider-track:hover {
+            animation-play-state: paused;
         }
 
         .product-card {
@@ -167,26 +192,38 @@
             padding: 15px;
             text-align: center;
             transition: transform 0.3s ease, border-color 0.3s ease;
+            width: 280px; /* Fixed card width optimized for slider track positioning */
+            flex-shrink: 0;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: scale(1.03);
             border-color: #dfba6b;
         }
 
         .product-card img {
             width: 100%;
-            height: 320px;
+            height: 350px;
             object-fit: cover;
             border-radius: 4px;
             margin-bottom: 15px;
-            background: #222; /* Fallback visually pleasing block */
+            background: #222;
         }
 
         .product-card p {
             font-size: 0.85rem;
             color: #aeaeae;
             letter-spacing: 1px;
+        }
+
+        /* Keyframes calculation for infinite loop transition */
+        @keyframes slideShow {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-305px * 4)); /* Moves exactly 4 cards over before snapping back invisibly */
+            }
         }
 
         /* --- FOOTER & CONTACT INFO --- */
@@ -277,7 +314,6 @@
             color: white;
         }
 
-        /* Responsive Layout fixes */
         @media (min-width: 768px) {
             .footer-grid {
                 flex-direction: row;
@@ -292,14 +328,11 @@
     <header>
         <h1 class="logo-title gold-text">SASSY-BY-FAVE</h1>
         
-        <!-- Main Collage/Flyer Graphic Asset Integration -->
         <div class="hero-banner-container">
-            <!-- Ensure watermarked_img_8438448594174531705.png is in your GitHub folder -->
-            <img src="watermarked_img_8438448594174531705.png" alt="Sassy-By-Fave Luxury Banner Banner">
+            <img src="watermarked_img_8438448594174531705.png" alt="Sassy-By-Fave Luxury Banner">
         </div>
     </header>
 
-    <!-- Main Dynamic Content Wrap -->
     <main>
         
         <!-- Exclusive Brand Intro Block -->
@@ -318,32 +351,50 @@
             </div>
         </section>
 
-        <!-- Showcase Catalog Grid Layout -->
+        <!-- Showcase Continuous Slideshow Window -->
         <section class="gallery-container">
-            <div class="gallery-grid">
+            <div class="slider-track">
                 
-                <!-- Product Card #1 referencing assigned filename verbatim -->
+                <!-- ORIGINAL CARDS SET -->
                 <div class="product-card">
-                    <img src="1000094677.jpg" alt="Featured Suit Wear Design Design Asset">
+                    <img src="1000094677.jpg" alt="Featured Black & White Jumpsuit">
+                    <p><strong>1000094677.jpg</strong></p>
+                </div>
+
+                <div class="product-card">
+                    <img src="favour_sbf.jpg" alt="Exquisite Navy Floral Two-Piece Set">
+                    <p><strong>Favour SBF</strong></p>
+                </div>
+
+                <div class="product-card">
+                    <img src="corporate_wear.jpg" alt="Burnt Orange Corporate Attire">
+                    <p><strong>Product Details</strong></p>
+                </div>
+
+                <div class="product-card">
+                    <img src="mustard_jumpsuit.jpg" alt="Mustard Gold Abstract Off-Shoulder Jumpsuit">
+                    <p><strong>Favour sbf</strong></p>
+                </div>
+
+                <!-- CLONED DUPLICATE CARDS SET (Creates the seamless loop illusion) -->
+                <div class="product-card">
+                    <img src="1000094677.jpg" alt="Featured Black & White Jumpsuit">
                     <p><strong>sleeveless jumpsuit</strong></p>
                 </div>
 
-                <!-- Product Card #2 -->
                 <div class="product-card">
-                    <img src="favour_sbf.jpg" alt="Exquisite Floral Design Wear Style">
-                    <p><strong>Co-ord Set</strong></strong></p>
+                    <img src="favour_sbf.jpg" alt="Exquisite Navy Floral Two-Piece Set">
+                    <p><strong>Co-ord Set</strong></p>
                 </div>
 
-                <!-- Product Card #3 -->
                 <div class="product-card">
-                    <img src="corporate_wear.jpg" alt="Elegant Outer Wear Design Specs">
+                    <img src="corporate_wear.jpg" alt="Burnt Orange Corporate Attire">
                     <p><strong>corporate wear</strong></p>
                 </div>
 
-                <!-- Product Card #4 -->
                 <div class="product-card">
-                    <img src="mustard_jumpsuit.jpg" alt="Classic Luxury Print Two-Piece">
-                    <p><strong>jumpsuit</strong></p>
+                    <img src="mustard_jumpsuit.jpg" alt="Mustard Gold Abstract Off-Shoulder Jumpsuit">
+                    <p><strong>mustard jumpsuit</strong></p>
                 </div>
 
             </div>
@@ -355,25 +406,20 @@
     <footer>
         <div class="footer-grid">
             
-            <!-- Address and Geolocation details -->
             <div class="address-box">
                 <i class="fa-solid fa-location-dot"></i>
                 <p>Shop 7 Rehoboth Plaza, Opposite Ibro Filling Station, Ojede Junction, Ankpa, Kogi State.</p>
             </div>
 
-            <!-- Fast Action Interaction Triggers -->
             <div class="footer-actions">
                 <button class="premium-btn" onclick="window.location.href='tel:07026157845'">Call Us</button>
                 <button class="premium-btn" onclick="window.location.href='tel:09050939106'">Inquire</button>
             </div>
 
-            <!-- Standardized Handles Integration UI Blocks -->
             <div class="social-container">
-                <!-- Facebook Asset Handle Redirect -->
                 <a href="https://facebook.com" target="_blank" class="social-box" title="Follow us on Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <!-- TikTok Asset Handle Redirect -->
                 <a href="https://tiktok.com" target="_blank" class="social-box" title="Follow us on TikTok">
                     <i class="fab fa-tiktok"></i>
                 </a>
