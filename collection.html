@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBF - Exclusive Collection Catalog</title>
+    
+    <!-- FontAwesome for Premium Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts for Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & GLOBAL LUXURY STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            background-image: linear-gradient(135deg, #0b0b0b 0%, #1a1a1a 100%);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .gold-text {
+            color: #dfba6b;
+            background: linear-gradient(135deg, #fbf5b7 0%, #dfba6b 50%, #b28d46 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- HEADER --- */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid rgba(223, 186, 107, 0.2);
+        }
+
+        .logo-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* --- COLLECTION CATALOG TITLE --- */
+        .catalog-intro {
+            text-align: center;
+            margin: 50px auto 30px auto;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+
+        .catalog-intro h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .catalog-intro p {
+            color: #999999;
+            font-size: 1rem;
+        }
+
+        /* --- PREMIUM GRID LAYOUT --- */
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .catalog-card {
+            background: rgba(18, 18, 18, 0.6);
+            border: 1px solid rgba(223, 186, 107, 0.15);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-8px);
+            border-color: #dfba6b;
+            box-shadow: 0 15px 30px rgba(223, 186, 107, 0.1);
+        }
+
+        .catalog-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .item-category {
+            font-size: 0.75rem;
+            color: #dfba6b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .item-description {
+            font-size: 0.85rem;
+            color: #aeaeae;
+            margin-bottom: 20px;
+            height: 60px; /* Keeps grids aligned perfectly */
+            overflow: hidden;
+        }
+
+        /* --- BUTTONS --- */
+        .premium-btn {
+            background: transparent;
+            color: #dfba6b;
+            border: 1px solid #dfba6b;
+            padding: 10px 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .premium-btn:hover {
+            background: linear-gradient(135deg, #fbf5b7 0%, #dfba6b 50%, #b28d46 100%);
+            color: #000000;
+            box-shadow: 0 0 15px rgba(223, 186, 107, 0.4);
+        }
+
+        .back-nav {
+            text-align: center;
+            margin: 40px 0 80px 0;
+        }
+
+        /* --- FOOTER & WHATSAPP FLOATING --- */
+        footer {
+            background: #050505;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(223, 186, 107, 0.2);
+            text-align: center;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .social-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-box {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(223, 186, 107, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-box:hover {
+            background: #dfba6b;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar Header -->
+    <header>
+        <a href="index.html" class="logo-title gold-text">SASSY-BY-FAVE</a>
+    </header>
+
+    <main>
+        <!-- Catalog Dynamic Frame -->
+        <section class="catalog-intro">
+            <h2 class="gold-text">THE LOOKBOOK</h2>
+            <p>Explore luxury bespoke fashion tailored specifically to stand out before kings. Tap an outfit to order directly via WhatsApp.</p>
+        </section>
+
+        <!-- Dynamic Cards Grid -->
+        <section class="catalog-container">
+            <div class="catalog-grid">
+                
+                <!-- Product item 1 -->
+                <div class="catalog-card">
+                    <img src="1000094677.jpg" alt="Black & White Jumpsuit">
+                    <div class="item-category">Luxury Jumpsuit</div>
+                    <div class="item-title">Abstract Brushstroke</div>
+                    <div class="item-description">Sleeveless modern premium design with a bold abstract contrast pattern and structural tie-belt.</div>
+                    <a href="https://wa.me/2347026157845?text=I'm%20interested%20in%20the%20Abstract%20Brushstroke%20Jumpsuit" target="_blank" class="premium-btn">Order This Style</a>
+                </div>
+
+                <!-- Product item 2 -->
+                <div class="catalog-card">
+                    <img src="favour_sbf.jpg" alt="Navy Floral Two Piece">
+                    <div class="item-category">Co-ords Set</div>
+                    <div class="item-title">Favour SBF Tunic</div>
+                    <div class="item-description">Asymmetrical elegant longline tunic top paired flawlessly with wide-leg coordinates.</div>
+                    <a href="https://wa.me/2347026157845?text=I'm%20interested%20in%20the%20Favour%20SBF%20Tunic%20Set" target="_blank" class="premium-btn">Order This Style</a>
+                </div>
+
+                <!-- Product item 3 -->
+                <div class="catalog-card">
+                    <img src="corporate_wear.jpg" alt="Burnt Orange Suit Set">
+                    <div class="item-category">Corporate Wear</div>
+                    <div class="item-title">The Royal Executive</div>
+                    <div class="item-description">Tailored structural burnt orange luxury blazer with intricate custom gold cuff and belt embroidery detailing.</div>
+                    <a href="https://wa.me/2347026157845?text=I'm%20interested%20in%20the%20Royal%20Executive%20Corporate%20Wear" target="_blank" class="premium-btn">Order This Style</a>
+                </div>
+
+                <!-- Product item 4 -->
+                <div class="catalog-card">
+                    <img src="mustard_jumpsuit.jpg" alt="Mustard Gold Jumpsuit">
+                    <div class="item-category">Dinner & Casual</div>
+                    <div class="item-title">Mustard Statement</div>
+                    <div class="item-description">Vibrant off-the-shoulder designer jumpsuit presenting high fashion premium abstract patterns.</div>
+                    <a href="https://wa.me/2347026157845?text=I'm%20interested%20in%20the%20Mustard%20Statement%20Jumpsuit" target="_blank" class="premium-btn">Order This Style</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Back Navigation Home Link Layout Trigger -->
+        <div class="back-nav">
+            <a href="index.html" class="premium-btn">← Back to Main Showcase</a>
+        </div>
+    </main>
+
+    <!-- Structural Footer Area -->
+    <footer>
+        <div class="footer-grid">
+            <p style="color: #666; font-size: 0.85rem;">&copy; 2026 Sassy-By-Fave. Crafted Exclusively.</p>
+            <div class="social-container">
+                <a href="https://facebook.com" target="_blank" class="social-box"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://tiktok.com" target="_blank" class="social-box"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Action Element Link -->
+    <a href="https://wa.me/2347026157845" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+  </html>
+  
